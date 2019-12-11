@@ -354,17 +354,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 391359186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ce7c793f3826e458a55eece57394c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9143ae30308164dae2e88b3f830b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BeastPrefab: {fileID: 7377779027959071143, guid: 1f8c25b0e612e2c4bba52419492b4c18,
     type: 3}
-  FoodPrefab: {fileID: 6994109482286000189, guid: 61e580dfe1048c14d84658b02f06c585,
-    type: 3}
   PlantPrefab: {fileID: 8098616045283981428, guid: 90d870e10cfce4641a1d469f9906ec7f,
     type: 3}
   beastCount: 20
-  foodCount: 10
   plantCount: 10
   fieldSize: {x: 50, y: 50}
 --- !u!1 &705507993

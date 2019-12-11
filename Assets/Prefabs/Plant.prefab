@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8098616045283981425}
   - component: {fileID: 8098616045283981426}
   - component: {fileID: 8098616045283981427}
+  - component: {fileID: 407439754220580781}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -94,3 +95,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &407439754220580781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098616045283981428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2155a8951174ee2438c3621d50c1e0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FruitPrefab: {fileID: 6994109482286000189, guid: 61e580dfe1048c14d84658b02f06c585,
+    type: 3}
+  spawnDelay: 1
+  spawnForce: 2000
