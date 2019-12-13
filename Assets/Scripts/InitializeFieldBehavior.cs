@@ -7,6 +7,7 @@ public class InitializeFieldBehavior : MonoBehaviour
     public GameObject BeastPrefab;
     public GameObject PlantPrefab;
     public int beastCount = 20;
+    public float beastSpawnRateVariance = 5f;
     public int plantCount = 10;
     public Vector2 fieldSize = new Vector2(50, 50);
     
@@ -48,13 +49,19 @@ public class InitializeFieldBehavior : MonoBehaviour
     {
         for (int i = 0; i < beastCount; i++)
         {
-            var x = Random.Range(-fieldSize.x / 2, fieldSize.x / 2);
-            var z = Random.Range(-fieldSize.y / 2, fieldSize.y / 2);
-            
-            Instantiate(BeastPrefab, new Vector3(x, 1, z), Quaternion.identity);
+            var a = Random.Range(0, beastSpawnRateVariance);
+            print(a);
+            Invoke("SpawnBeast", a);
         }
     }
-    
+
+    void SpawnBeast()
+    {
+        var x = Random.Range(-fieldSize.x / 2, fieldSize.x / 2);
+        var z = Random.Range(-fieldSize.y / 2, fieldSize.y / 2);
+        Instantiate(BeastPrefab, new Vector3(x, 1, z), Quaternion.identity);
+    }
+
     private void InitializePlants()
     {
         for (int i = 0; i < plantCount; i++)
