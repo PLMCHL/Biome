@@ -50,7 +50,6 @@ public class InitializeFieldBehavior : MonoBehaviour
         for (int i = 0; i < beastCount; i++)
         {
             var a = Random.Range(0, beastSpawnRateVariance);
-            print(a);
             Invoke("SpawnBeast", a);
         }
     }
