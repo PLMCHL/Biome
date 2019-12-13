@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6994109482286000185}
   - component: {fileID: 6994109482286000190}
   - component: {fileID: 6994109482286000191}
-  - component: {fileID: 6994109482286000188}
+  - component: {fileID: 453957525181059567}
   - component: {fileID: 6994109482286000184}
   m_Layer: 0
-  m_Name: Food
+  m_Name: PlantFood
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6994109482286000189}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &6994109482286000191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6994109482286000188
-CapsuleCollider:
+--- !u!65 &453957525181059567
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,9 +91,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6994109482286000184
 Rigidbody:

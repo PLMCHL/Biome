@@ -26,32 +26,31 @@ public class InitializeFieldBehavior : MonoBehaviour
 
     private void ScaleGround()
     {
-        var targetScale = new Vector3(fieldSize.x / 2 / 5, 1, fieldSize.y / 2 / 5);
+        var targetScale = new Vector3(fieldSize.x, 1, fieldSize.y);
         setGameObjectScale("Ground", targetScale);
     }
 
     private void PlaceWalls()
     {
-        setGameObjectPosition("WallDown", new Vector3(0, 0, -fieldSize.y / 2));
-        setGameObjectPosition("WallUp", new Vector3(0, 0, fieldSize.y / 2));
+        setGameObjectPosition("WallDown", new Vector3(0, 2.5f, -fieldSize.y / 2));
+        setGameObjectPosition("WallUp", new Vector3(0, 2.5f, fieldSize.y / 2));
 
-        setGameObjectPosition("WallLeft", new Vector3(-fieldSize.x / 2, 0, 0));
-        setGameObjectPosition("WallRight", new Vector3(fieldSize.x / 2, 0, 0));
+        setGameObjectPosition("WallLeft", new Vector3(-fieldSize.x / 2, 2.5f, 0));
+        setGameObjectPosition("WallRight", new Vector3(fieldSize.x / 2, 2.5f, 0));
 
-        setGameObjectScale("WallDown", new Vector3(fieldSize.x / 2 / 5, 1, 1));
-        setGameObjectScale("WallUp", new Vector3(fieldSize.x / 2 / 5, 1, 1));
+        setGameObjectScale("WallDown", new Vector3(fieldSize.x, 5, 1));
+        setGameObjectScale("WallUp", new Vector3(fieldSize.x, 5, 1));
 
-        setGameObjectScale("WallLeft", new Vector3(fieldSize.y / 2 / 5, 1, 1));
-        setGameObjectScale("WallRight", new Vector3(fieldSize.y / 2 / 5, 1, 1));
+        setGameObjectScale("WallLeft", new Vector3(1, 5, fieldSize.y));
+        setGameObjectScale("WallRight", new Vector3(1, 5, fieldSize.y));
     }
 
     private void InitializeBeasts()
     {
         for (int i = 0; i < beastCount; i++)
         {
-            var a = Random.Range(0, beastSpawnRateVariance);
-            print(a);
-            Invoke("SpawnBeast", a);
+            var spawnDelay = Random.Range(0, beastSpawnRateVariance);
+            Invoke("SpawnBeast", spawnDelay);
         }
     }
 

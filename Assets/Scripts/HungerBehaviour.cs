@@ -35,7 +35,6 @@ public class HungerBehaviour : MonoBehaviour
 
         if (hunger.x + hunger.y + hunger.z < 0.00001f)
         {
-            //print(hunger.x + ":" + hunger.y + ":" + hunger.z);
             Destroy(this.gameObject);
         }
     }
