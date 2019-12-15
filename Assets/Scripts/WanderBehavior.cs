@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WanderBehaviour : MonoBehaviour
+public class WanderBehavior : MonoBehaviour
 {
     private Rigidbody rb;
 

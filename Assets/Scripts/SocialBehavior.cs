@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-public class SocialBehaviour : MonoBehaviour
+public class SocialBehavior : MonoBehaviour
 {
-    private float fightThreshold = 1f;
+    private float fightThreshold = 0.5f;
     private Material material;
     private float timeBetweenSpawn = 4;
     private float timeSinceLastSpawn = 0;
     private float timeBeforeMaturity = 5;
+    //public Animator animator;
 
     void Start()
     {
@@ -27,15 +28,11 @@ public class SocialBehaviour : MonoBehaviour
             var colliderMaterial = collision.gameObject.GetComponent<Renderer>().material;
             var colliderColor = colliderMaterial.color;
 
-            var distance = color.r - colliderColor.r + color.g - colliderColor.g + color.b - colliderColor.b;
+            var distance =  + color.g - colliderColor.g + color.b - colliderColor.b;
 
-            if (System.Math.Abs(distance) > fightThreshold)
-            {
-                print("death - distance: " + distance);
-                Destroy(collision.gameObject);
-                Destroy(this.gameObject);
-            }
-            else
+            if (System.Math.Abs(color.r - colliderColor.r) < fightThreshold ||
+                System.Math.Abs(color.g - colliderColor.g) < fightThreshold ||
+                System.Math.Abs(color.b - colliderColor.b) < fightThreshold)
             {
                 if (timeSinceLastSpawn > timeBetweenSpawn && timeBeforeMaturity < 0)
                 {
@@ -50,9 +47,25 @@ public class SocialBehaviour : MonoBehaviour
                     var child = Instantiate(this.gameObject, position, Quaternion.identity);
                     var childMaterial = child.GetComponent<Renderer>().material;
                     childMaterial.color = childColor;
-
-
                 }
+            }
+            else
+            {
+                print("death");
+
+                GameObject loser;
+                if (this.transform.localScale.x > collision.transform.localScale.x)
+                {
+                    loser = collision.gameObject;
+                }
+                else
+                {
+                    loser = this.gameObject;
+                }
+
+                var animator = loser.GetComponent<Animator>();
+                animator.SetBool("Dead", true);
+                Destroy(loser, animator.GetCurrentAnimatorStateInfo(0).length);
             }
         }
     }

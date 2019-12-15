@@ -361,10 +361,10 @@ MonoBehaviour:
     type: 3}
   PlantPrefab: {fileID: 8098616045283981428, guid: 90d870e10cfce4641a1d469f9906ec7f,
     type: 3}
-  beastCount: 100
-  beastSpawnRateVariance: 20
+  beastCount: 20
+  beastSpawnRateVariance: 5
   plantCount: 20
-  fieldSize: {x: 100, y: 100}
+  fieldSize: {x: 50, y: 50}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

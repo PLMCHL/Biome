@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class HungerBehaviour : MonoBehaviour
+public class HungerBehavior : MonoBehaviour
 {
     private Vector3 hunger = new Vector3(0.5f, 0.5f, 0.5f);
-    private float hungerDecay = 0.0003f;
-    private float hungerEatingBoost = 0.25f;
+    private float hungerDecay = 0.001f;
+    private float hungerColorBoost = 0.25f;
     private Material material;
 
     void Start()
@@ -18,9 +18,10 @@ public class HungerBehaviour : MonoBehaviour
         {
             var colliderMaterial = collision.gameObject.GetComponent<Renderer>().material;
 
-            hunger += new Vector3(colliderMaterial.color.r * hungerEatingBoost,
-                                  colliderMaterial.color.g * hungerEatingBoost,
-                                  material.color.b * hungerEatingBoost);
+            hunger += new Vector3(colliderMaterial.color.r * hungerColorBoost,
+                                  colliderMaterial.color.g * hungerColorBoost,
+                                  material.color.b * hungerColorBoost);
+            
             Destroy(collision.gameObject);
         }
     }
@@ -38,6 +39,4 @@ public class HungerBehaviour : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-
 }

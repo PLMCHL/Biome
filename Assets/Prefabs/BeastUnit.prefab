@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7377779027959071141}
   - component: {fileID: 7377779027959071142}
   - component: {fileID: 7377779027959071137}
-  - component: {fileID: 7377779027959071138}
+  - component: {fileID: 4615045815308795683}
   - component: {fileID: 6501518468314467119}
   - component: {fileID: 466238407607164960}
+  - component: {fileID: 6467342235910079668}
   m_Layer: 9
   m_Name: BeastUnit
   m_TagString: Beast
@@ -113,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7377779027959071138
+--- !u!114 &4615045815308795683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,3 +150,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc327f6caba4ba4582821169b3f5b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6467342235910079668
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377779027959071143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 253d57a0104fbbf4ebfb492fc7fd35ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
