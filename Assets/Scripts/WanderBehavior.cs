@@ -6,7 +6,7 @@ public class WanderBehavior : MonoBehaviour
     private float turnAngle = 20f;
     private float speed = 5f;
     private Vector3 direction;
-    private float detectionRange = 2f;
+    private float detectionRange = 5f;
 
     void Start()
     {

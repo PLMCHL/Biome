@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class HungerBehavior : MonoBehaviour
 {
     private Vector3 hunger = new Vector3(0.5f, 0.5f, 0.5f);
     private float hungerDecay = 0.001f;
     private float hungerColorBoost = 0.25f;
+    private float hungerSizeBoost = 0.25f;
     private Material material;
 
     void Start()
@@ -16,14 +18,24 @@ public class HungerBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Food"))
         {
-            var colliderMaterial = collision.gameObject.GetComponent<Renderer>().material;
-
-            hunger += new Vector3(colliderMaterial.color.r * hungerColorBoost,
-                                  colliderMaterial.color.g * hungerColorBoost,
-                                  material.color.b * hungerColorBoost);
-            
+            UpdateColor(collision);
+            UpdateSize();
             Destroy(collision.gameObject);
         }
+    }
+
+    void UpdateColor(Collision collision)
+    {
+        var colliderMaterial = collision.gameObject.GetComponent<Renderer>().material;
+
+        hunger += new Vector3(colliderMaterial.color.r * hungerColorBoost,
+                              colliderMaterial.color.g * hungerColorBoost,
+                              colliderMaterial.color.b * hungerColorBoost);
+    }
+
+    void UpdateSize()
+    {
+        this.transform.localScale += new Vector3(hungerSizeBoost, hungerSizeBoost, hungerSizeBoost);
     }
 
     void FixedUpdate()

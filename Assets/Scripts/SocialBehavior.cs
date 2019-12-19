@@ -7,7 +7,6 @@ public class SocialBehavior : MonoBehaviour
     private float timeBetweenSpawn = 4;
     private float timeSinceLastSpawn = 0;
     private float timeBeforeMaturity = 5;
-    //public Animator animator;
 
     void Start()
     {
@@ -37,7 +36,6 @@ public class SocialBehavior : MonoBehaviour
                 if (timeSinceLastSpawn > timeBetweenSpawn && timeBeforeMaturity < 0)
                 {
                     timeSinceLastSpawn = 0;
-                    print("birth");
 
                     var position = (this.transform.position + collision.transform.position) / 2;
                     var childColor = new Color((color.r + colliderColor.r) / 2,
