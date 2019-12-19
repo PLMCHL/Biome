@@ -28,6 +28,12 @@ public class WanderBehavior : MonoBehaviour
         direction = Quaternion.Euler(0, angle, 0) * direction;
         direction.Normalize();
         
-        this.transform.Translate(direction * speed * Time.deltaTime);
+        this.transform.position += direction * speed * Time.deltaTime;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + direction);
     }
 }
