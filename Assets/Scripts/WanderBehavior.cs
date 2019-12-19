@@ -31,6 +31,12 @@ public class WanderBehavior : MonoBehaviour
                     continue;
                 }
 
+                Physics.Linecast(this.transform.position, collider.gameObject.transform.position, out RaycastHit raycastHit);
+                if (!raycastHit.collider.gameObject.CompareTag("Food"))
+                {
+                    continue;
+                }
+
                 closestDistance = distance;
                 target = collider.gameObject;
             }
