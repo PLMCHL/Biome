@@ -36,7 +36,9 @@ public class HungerBehavior : MonoBehaviour
 
         if (hunger.x + hunger.y + hunger.z < 0.00001f)
         {
-            Destroy(this.gameObject);
+            var animator = this.gameObject.GetComponent<Animator>();
+            animator.SetBool("Dead", true);
+            Destroy(this.gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
         }
     }
 }
